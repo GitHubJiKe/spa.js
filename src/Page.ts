@@ -1,10 +1,8 @@
-import Block from './Block.js'
-import SPA from './SPA.js'
+import Block from './Block'
 
 export default class Page extends Block {
 
   #path = ''
-  ele!: HTMLElement
   #animateIn: string[] = []
   #animateOut: string[] = []
   constructor() {

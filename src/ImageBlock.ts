@@ -1,11 +1,10 @@
-import Block from './Block.js'
+import Block from './Block'
 
 export default class ImageBlock extends Block {
-  ele!: HTMLImageElement
   constructor(src?: string) {
     super()
     this.ele = document.createElement('img')
-    src && (this.ele.src = src)
+    src && ((this.ele as HTMLImageElement).src = src)
   }
 
   element() {
@@ -23,7 +22,7 @@ export default class ImageBlock extends Block {
   }
 
   src(src: string) {
-    this.ele.src = src
+    (this.ele as HTMLImageElement).src = src
     return this
   }
 }

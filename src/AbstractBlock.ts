@@ -1,4 +1,4 @@
-import SPA from './SPA.js'
+import SPA from './SPA'
 
 export default abstract class AbstractBlock {
   abstract element(): HTMLElement

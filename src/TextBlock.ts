@@ -1,11 +1,10 @@
-import Block from './Block.js'
+import Block from './Block'
 
 export default class TextBlock extends Block {
   addChild(_child: Block) {
     return this
   }
 
-  ele!: HTMLElement
   constructor(text: string) {
     super()
     this.ele = document.createElement('span')

@@ -1,3 +1,8 @@
+# spa.js
+
+> simple way to make SPA pages for newbies in frontend.
+
+```js
 import SPA from './SPA'
 import Page from './Page'
 import PureBlock from './PureBlock'
@@ -57,3 +62,4 @@ new SPA('#app')
       .out('animate__animated animate__fadeOutDown')
   )
   .render(true)
+```

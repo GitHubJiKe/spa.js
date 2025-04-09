@@ -1,29 +1,33 @@
-import AbstractBlock from './AbstractBlock.js'
-import SPA from './SPA.js'
+import AbstractBlock from './AbstractBlock'
+import SPA from './SPA'
 
 export default class Block extends AbstractBlock {
-  #appInstance!: SPA
+  public static appInstance: SPA
+  public ele!: HTMLElement
+  #children: Block[] = []
+
 
   setAppInstance(app: SPA) {
-    this.#appInstance = app
+    Block.appInstance = app
   }
 
   element() {
     return this.ele
   }
+
   removeChild(child: Block) {
     this.#children = this.#children.filter(c => c !== child)
     return this
   }
+
   children(): Block[] {
     return this.#children
   }
+
   style(css: string) {
     this.element().style.cssText += css
     return this
   }
-  public ele!: HTMLElement
-  #children: Block[] = []
 
   classname(name: string) {
     if (name.includes(' ')) {
@@ -38,12 +42,14 @@ export default class Block extends AbstractBlock {
     }
     return this
   }
-  on(event: string, callback: (...args: any[]) => void) {
-    this.element().addEventListener(event, e => callback(e, this.#appInstance))
+
+  on(event: string, callback: (e: Event, app: SPA) => void) {
+    this.element().addEventListener(event, e => callback(e, Block.appInstance))
     return this
   }
+
   addChild(child: Block) {
-    child.setAppInstance(this.#appInstance)
+    child.setAppInstance(Block.appInstance)
     this.#children.push(child)
     this.element().appendChild(child.element())
     return this

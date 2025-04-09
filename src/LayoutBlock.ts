@@ -1,7 +1,6 @@
-import Block from './Block.js'
+import Block from './Block'
 
 export default class LayoutBlock extends Block {
-  ele!: HTMLElement
   #direction: 'row' | 'column'
   constructor(direction: 'row' | 'column') {
     super()

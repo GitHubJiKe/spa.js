@@ -1,7 +1,6 @@
-import Block from './Block.js'
+import Block from './Block'
 
 export default class PureBlock extends Block {
-  ele!: HTMLElement
   constructor() {
     super()
     this.ele = document.createElement('div')
