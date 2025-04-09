@@ -2,7 +2,7 @@ import AbstractBlock from './AbstractBlock'
 import SPA from './SPA'
 
 export default class Block extends AbstractBlock {
-  public static appInstance: SPA
+  static appInstance: SPA
   public ele!: HTMLElement
   #children: Block[] = []
 
@@ -49,7 +49,6 @@ export default class Block extends AbstractBlock {
   }
 
   addChild(child: Block) {
-    child.setAppInstance(Block.appInstance)
     this.#children.push(child)
     this.element().appendChild(child.element())
     return this
