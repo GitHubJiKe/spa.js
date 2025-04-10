@@ -5,8 +5,12 @@ export default class Page extends Block {
   #path = ''
   #animateIn: string[] = []
   #animateOut: string[] = []
-  constructor() {
+  public pageTitle!: string;
+  constructor(title?: string) {
     super()
+    if (title) {
+      this.pageTitle = title
+    }
     this.ele = document.createElement('div')
     this.ele.style.cssText = 'height:100vh;width:100vw;'
     this.ele.setAttribute('data-name', 'Page')

@@ -21,12 +21,12 @@ export default class SPA {
     return this
   }
 
-  render(keep?: boolean) {
+  render(keepPageRoute?: boolean) {
     if (this.#currentPage) {
       this.#target.appendChild(this.#currentPage.element())
       return
     }
-    if (!keep) {
+    if (!keepPageRoute) {
       localStorage.removeItem('SPA_CURRENT_PATH')
       this.#currentPage = this.#pages[0]
       this.#target.appendChild(this.#currentPage.element())
@@ -55,6 +55,9 @@ export default class SPA {
     this.#currentPage.animateIn()
     setTimeout(() => {
       this.#target.appendChild(this.#currentPage.element())
+      if (this.#currentPage.pageTitle) {
+        document.title = this.#currentPage.pageTitle
+      }
     }, 500)
   }
 }

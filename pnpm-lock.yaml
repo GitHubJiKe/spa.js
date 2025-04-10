@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  nanostores:
+    specifier: ^0.11.4
+    version: 0.11.4
+
 devDependencies:
   typescript:
     specifier: ~5.7.2
@@ -460,6 +465,11 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
     dev: true
+
+  /nanostores@0.11.4:
+    resolution: {integrity: sha1-TtMj97LLvwNCwta+OgyDPatzrzQ=, tarball: http://r.npm.sankuai.com/nanostores/download/nanostores-0.11.4.tgz}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    dev: false
 
   /picocolors@1.1.1:
     resolution: {integrity: sha1-PTIa8+q5ObCDyPkpodEs2oHCa2s=, tarball: http://r.npm.sankuai.com/picocolors/download/picocolors-1.1.1.tgz}

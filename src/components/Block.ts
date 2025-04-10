@@ -1,3 +1,4 @@
+
 import AbstractBlock from './AbstractBlock'
 import SPA from './SPA'
 
@@ -43,8 +44,8 @@ export default class Block extends AbstractBlock {
     return this
   }
 
-  on(event: string, callback: (e: Event, app: SPA) => void) {
-    this.element().addEventListener(event, e => callback(e, Block.appInstance))
+  on(event: string, callback: (e: Event, app: SPA, self: Block) => void) {
+    this.element().addEventListener(event, e => callback(e, Block.appInstance, this))
     return this
   }
 
@@ -53,4 +54,6 @@ export default class Block extends AbstractBlock {
     this.element().appendChild(child.element())
     return this
   }
+
+
 }

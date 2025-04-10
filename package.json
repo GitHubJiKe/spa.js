@@ -21,5 +21,8 @@
     "bracketSpacing": true,
     "arrowParens": "avoid",
     "endOfLine": "auto"
+  },
+  "dependencies": {
+    "nanostores": "^0.11.4"
   }
 }
